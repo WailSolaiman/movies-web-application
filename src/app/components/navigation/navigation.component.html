@@ -1,0 +1,43 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+      <a class="navbar-brand" routerLink="/movies-home">MOVIE4ALL</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/movies-home" routerLinkActive="active">All Movies</a></li>
+        <li><a routerLink="/movies-hd" routerLinkActive="active">Just HD</a></li>
+        <li><a routerLink="/movies-latest" routerLinkActive="active">Latest</a></li>
+        <li><a routerLink="/movies-home" routerLinkActive="active">Popular</a></li>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+          role="button" aria-haspopup="true" aria-expanded="false">
+            Movies Genre
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/movies-home" routerLinkActive="active">Action</a></li>
+            <li><a routerLink="/movies-home" routerLinkActive="active">Drama</a></li>
+            <li><a routerLink="/movies-home" routerLinkActive="active">Horror</a></li>
+            <li><a routerLink="/movies-home" routerLinkActive="active">Comedy</a></li>
+            <li><a routerLink="/movies-home" routerLinkActive="active">Thriller</a></li>
+            <li><a routerLink="/movies-home" routerLinkActive="active">Fantasy</a></li>
+            <li><a routerLink="/movies-home" routerLinkActive="active">Animation</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li><a routerLink="/register" routerLinkActive="active">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

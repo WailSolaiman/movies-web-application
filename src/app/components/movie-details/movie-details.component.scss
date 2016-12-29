@@ -1,0 +1,58 @@
+.container {
+      margin-bottom: 20px;
+}
+
+.col-lg-4 {
+  padding: 0;
+  img {
+    width: 350px;
+    height: 525px;
+    margin-top: 20px;
+  }
+  .warningInfo {
+    margin-top: 2%;
+  }
+}
+
+.col-lg-8 {
+  .title {
+    background-color: rgb(3, 20, 66);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  .description {
+    margin-bottom: 60px;
+  }
+  ul {
+    li {
+      font-size: large;
+    }
+  }
+  .row {
+    margin-bottom: 20px;
+    .col-lg-12 {
+      .starImages {
+        width: 200px;
+        height: 290px;
+        margin-right: 10px;
+      }
+      .carousel {
+        .carousel-inner {
+          width: 750px;
+          height: 400px;
+          .item {
+            img {
+              height: 420px;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn {
+    margin-bottom: 10px;
+  }
+}

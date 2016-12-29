@@ -1,0 +1,12 @@
+$bg_color: gray;
+
+footer {
+  background-color: $bg_color;
+  .row {
+    .col-lg-12 {
+      p {
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<div class="container media">
+  <div class="row">
+    <div class="col-lg-4 media-left media-middle">
+      <img class="media-object" src="{{specificMovie?.mainMoviePicture}}" alt="...">
+      <div *ngIf="!isLogedin" class="warningInfo">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong>Not a member yet?</strong> Join us and enjoy watching the full
+           movie: <u>{{specificMovie?.movieTitle}} ({{specificMovie?.movieReleaseDate}})</u> in <strong>HD</strong>.
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <h1 class="title">{{specificMovie?.movieTitle}} ({{specificMovie?.movieReleaseDate}})</h1>
+      <h2 class="description">{{specificMovie?.movieDescription}}</h2>
+      <h4><strong>Director:</strong> {{specificMovie?.movieDirector}}</h4>
+      <h4><strong>Writer(-s):</strong></h4>
+      <ul>
+        <li *ngFor="let writers of specificMovie?.movieWriters; let i=index">{{writers}}</li>
+      </ul>
+      <h4><strong>Stars:</strong></h4>
+      <ul>
+        <li *ngFor="let stars of specificMovie?.movieStars;  let i=index">{{stars}}</li>
+      </ul>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <img class="img-thumbnail starImages" *ngFor="let starImages of specificMovie?.movieStarsImages;" src="{{starImages}}" alt="">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- <img class="moviePhotos" *ngFor="let photos of specificMovie?.moviePhotos;" src="{{photos}}" alt=""> -->
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item" *ngFor="let photos of specificMovie?.moviePhotos; let i=index;" [class.active]="checkFirstDivElement(i)">
+                <img src="{{photos}}" alt="">
+                <!-- <div class="carousel-caption">
+                  ...
+                </div> -->
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <input class="btn btn-primary" type="submit" value="Watch Trailer" (click)="updateVideoUrl(specificMovie?.movieTrailer)">
+        <div *ngIf="isCliked">
+          <iframe width="750" height="500" [src]="videoUrl"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

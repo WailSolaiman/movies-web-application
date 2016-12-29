@@ -1,0 +1,40 @@
+nav {
+  border-radius: 0;
+  background-color: rgb(3, 20, 66);
+    border-color: #000000;
+}
+
+.navbar-header {
+  a {
+    font-size: 25px;
+    color: #ffffff;
+  }
+}
+
+.collapse {
+  ul {
+    li {
+      a  {
+        color: white;
+        font-size: large;
+        &:hover {
+          color: rgb(3, 20, 66);
+          background-color: #ffffff;
+        }
+        // &:select {
+        //   background-color: rgb(3, 20, 66);
+        // }
+      }
+      ul {
+        li {
+          &:hover {
+            background-color: rgb(3, 20, 66);
+          }
+          a {
+            color: rgb(3, 20, 66);
+          }
+        }
+      }
+    }
+  }
+}
