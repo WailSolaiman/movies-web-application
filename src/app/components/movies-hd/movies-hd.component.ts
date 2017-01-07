@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieInfos } from '../../models/MovieInfos';
-import { MovieDetailsService } from '../../services/movie-details.service';
+import { MoviesService } from '../../services/movies.service';
 
 
 @Component({
@@ -12,11 +12,11 @@ export class MoviesHdComponent implements OnInit {
 
   moviesHD: MovieInfos [];
 
-  constructor(private movieDetailsService: MovieDetailsService) { }
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
-    this.movieDetailsService.getAllMovies()
-      .subscribe(res => this.moviesHD = res);
+     this.moviesService.getAllMovies()
+       .subscribe(res => this.moviesHD = res);
   }
 
 }

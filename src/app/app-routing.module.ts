@@ -1,34 +1,68 @@
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes, Route } from '@angular/router';
 
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { MoviesHomeComponent } from './components/movies-home/movies-home.component';
 import { MoviesHdComponent } from './components/movies-hd/movies-hd.component';
 import { MoviesLatestComponent } from './components/movies-latest/movies-latest.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { MoviesManagementComponent } from './components/admin/movies-management/movies-management.component';
+import { UsersManagementComponent } from './components/admin/users-management/users-management.component';
+
+
+
+const indexRoute: Route = {
+  path: '',
+  component: HomeComponent
+};
+
+const fallbackRoute: Route = {
+  path:'**',
+  component: HomeComponent
+};
 
 const appRoutes: Routes = [
-  { path: '', component: MoviesHomeComponent },
-  { path: 'movies-home', component: MoviesHomeComponent },
+  indexRoute,
+  { path: 'home', component: HomeComponent },
   // { path: 'movie-details/:movieID', component: MovieDetailsComponent }
   {
-    path: 'movie-details',
-    children: [
+    path: 'movie',
+    children:
+    [
       {
         path: '',
-        component: MoviesHomeComponent
+        component: MovieComponent
       },
       {
-        path: ':movieID',
-        component: MovieDetailsComponent
+        path: ':$key',
+        component: MovieComponent
       }
     ]
   },
   { path: 'movies-hd', component: MoviesHdComponent },
   { path: 'movies-latest', component: MoviesLatestComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children:
+    [
+      {
+        path: 'movies-management',
+        component: MoviesManagementComponent,
+        outlet: 'movies-management-outlet'
+      },
+      {
+        path: 'users-management',
+        component: UsersManagementComponent,
+        outlet: 'users-management-outlet'
+      }
+    ]
+  },
+  fallbackRoute
 ];
 
 @NgModule({

@@ -1,44 +1,33 @@
 export class MovieInfos {
-  movieID: number;
-  mainMoviePicture: string;
-  movieTitle: string;
-  movieDescription: string;
-  movieReleaseDate: number;
-  isMovieHD: boolean;
-
-  movieDirector: string;
-  movieWriters: string [];
-  movieStars: string [];
-  movieStarsImages: string [];
-  movieTrailer: string;
-  moviePhotos: string [];
 
   constructor(
-    mi: number,
-    mmp: string,
-    mt: string,
-    md: string,
-    mrd: number,
-    imhd: boolean,
-    mdi: string,
-    mw: string [],
-    ms: string [],
-    msi: string [],
-    mtr: string,
-    mp: string []
-  ) {
-    this.movieID = mi;
-    this.mainMoviePicture = mmp;
-    this.movieTitle = mt;
-    this.movieDescription = md;
-    this.movieReleaseDate = mrd;
-    this.isMovieHD = imhd;
+    public $key: string,
+    public movieID: number,
+    public mainMoviePicture: string,
+    public movieTitle: string,
+    public movieDescription: string,
+    public movieReleaseDate: number,
+    public isMovieHD: boolean,
+    public movieDirector: string,
+    public movieWriters: string[],
+    public movieStars: string[],
+    public movieStarsImages: string[],
+    public movieTrailer: string,
+    public moviePhotos: string[]
+  ) { }
 
-    this.movieDirector = mdi;
-    this.movieWriters = mw;
-    this.movieStars = ms;
-    this.movieStarsImages = msi;
-    this.movieTrailer = mtr;
-    this.moviePhotos = mp;
+  static fromJsonList(array): MovieInfos[] {
+    return array.map(MovieInfos.fromJson);
+  }
+
+  static fromJson({$key, movieID, mainMoviePicture,
+    movieTitle, movieDescription, movieReleaseDate, isMovieHD,
+    movieDirector, movieWriters, movieStars, movieStarsImages,
+    movieTrailer, moviePhotos}): MovieInfos {
+
+    return new MovieInfos($key, movieID, mainMoviePicture,
+      movieTitle, movieDescription, movieReleaseDate, isMovieHD,
+      movieDirector, movieWriters, movieStars, movieStarsImages,
+      movieTrailer, moviePhotos);
   }
 }

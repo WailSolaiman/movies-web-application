@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Manage Movies</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#new" aria-controls="new" role="tab" data-toggle="tab">Add new movie</a></li>
+        <li role="presentation"><a href="#update" aria-controls="update" role="tab" data-toggle="tab">Update Movie</a></li>
+        <li role="presentation"><a href="#delete" aria-controls="delete" role="tab" data-toggle="tab">Delete Movie</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content" style="margin: 20px;">
+        <div role="tabpanel" class="tab-pane active" id="new">
+          <new-movie></new-movie>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="update">
+          <update-movie></update-movie>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="delete">
+          <delete-movie></delete-movie>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

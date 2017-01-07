@@ -2,39 +2,37 @@
   <div class="page-header">
     <h1>Login <small>Login to your MOVIE4ALL account</small></h1>
   </div>
-  <form action="" #f="ngForm" (ngSubmit)="onSubmit(f.form)">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="emailaddress">Email address</label>
       <input
-            ngModel
-            name="email"
-            #email="ngModel"
+            formControlName="email"
             type="email"
             class="form-control"
             id="emailaddress"
             aria-describedby="emailHelp"
-            placeholder="Enter email"
-            required>
+            placeholder="Enter email">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      <div *ngIf="email.touched && !email.valid" class="alert alert-danger">
-        E-Mail is required.
+      <div
+            *ngIf="form.controls.email.touched && !form.controls.email.valid"
+            class="alert alert-danger">
+            E-Mail Format is not valid.
       </div>
     </div>
     <div class="form-group">
-      <label for="passwordOne">Password</label>
+      <label for="password">Password</label>
       <input
-            ngModel
-            name="password"
-            #password="ngModel"
+            formControlName="password"
             type="password"
             class="form-control"
-            id="passwordOne"
-            placeholder="Password"
-            required>
-      <div *ngIf="password.touched && !password.valid" class="alert alert-danger">
-        Password is required.
+            id="password"
+            placeholder="Password">
+      <div
+            *ngIf="form.controls.password.touched && !form.controls.password.valid"
+            class="alert alert-danger">
+            Password is required.
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
   </form>
 </div>

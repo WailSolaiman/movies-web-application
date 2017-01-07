@@ -1,9 +1,9 @@
 <!-- Reactive FormsModule  -->
-<div class="container">
+<div *ngIf = "!isRegisterd" class="container">
   <div class="page-header">
     <h1>Register <small>New User Registration </small></h1>
   </div>
-  <form [formGroup]="form" (ngSubmit)="onSubmit(f.form)">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="firstname">Firstname</label>
       <input
@@ -76,28 +76,45 @@
       <div
             *ngIf="form.controls.password.touched && !form.controls.password.valid"
             class="alert alert-danger">
-            Password is required.
+            Password should be minimum {{form.controls.password.errors.minlength.requiredLength}} characters.
       </div>
     </div>
+    <!-- <div formGroupName="passwords">
+      <div class="form-group">
+        <label for="passwordOne">Password</label>
+        <input
+              formControlName="password"
+              type="password"
+              class="form-control"
+              id="passwordOne"
+              placeholder="Password">
+      </div>
 
-    <div class="form-group">
-      <label for="passwordTwo">Repeat Password</label>
-      <input
-            formControlName="repeatPassword"
-            type="password"
-            class="form-control"
-            id="passwordTwo"
-            placeholder="Repeat password">
+      <div class="form-group">
+        <label for="passwordTwo">Repeat Password</label>
+        <input
+              formControlName="repeatPassword"
+              type="password"
+              class="form-control"
+              id="passwordTwo"
+              placeholder="Repeat password">
+      </div>
+    </div>
       <div
-            *ngIf="form.controls.repeatPassword.touched && !form.controls.repeatPassword.valid"
+            *ngIf="form.controls.passwords?.errors?.areEqual"
             class="alert alert-danger">
-            Reenter the same password.
-      </div>
-    </div>
-
+            The two passwords aren't the same
+      </div> -->
     <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
 
   </form>
+</div>
+
+<div *ngIf="isRegisterd" class="container">
+  <div class="alert alert-success" role="alert">
+    <p>You have now successfully registered... Enjoy your time with us.</p>
+    <small>Please <a routerLink="/login" routerLinkActive="active" class="alert-link">Login</a> to watch best MOVIE4ALL movies with HD quality.</small>
+  </div>
 </div>
 
 <!-- FormsModule  -->

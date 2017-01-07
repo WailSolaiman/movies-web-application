@@ -1,36 +1,45 @@
 <div class="container media">
   <div class="row">
-    <div class="col-lg-4 media-left media-middle">
-      <img class="media-object" src="{{specificMovie?.mainMoviePicture}}" alt="...">
+    <div class="col-md-4">
+      <img class="img-responsive img-thumbnail" src="{{specificMovie?.mainMoviePicture}}" alt="...">
       <div *ngIf="!isLogedin" class="warningInfo">
         <div class="alert alert-danger alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <strong>Not a member yet?</strong> Join us and enjoy watching the full
-           movie: <u>{{specificMovie?.movieTitle}} ({{specificMovie?.movieReleaseDate}})</u> in <strong>HD</strong>.
+          <strong>Not a member yet?</strong> Join us and enjoy watching the full movie: <u>{{specificMovie?.movieTitle}} ({{specificMovie?.movieReleaseDate}})</u> in <strong>HD</strong>.
         </div>
       </div>
     </div>
-    <div class="col-lg-8">
-      <h1 class="title">{{specificMovie?.movieTitle}} ({{specificMovie?.movieReleaseDate}})</h1>
-      <h2 class="description">{{specificMovie?.movieDescription}}</h2>
-      <h4><strong>Director:</strong> {{specificMovie?.movieDirector}}</h4>
-      <h4><strong>Writer(-s):</strong></h4>
-      <ul>
-        <li *ngFor="let writers of specificMovie?.movieWriters; let i=index">{{writers}}</li>
-      </ul>
-      <h4><strong>Stars:</strong></h4>
-      <ul>
-        <li *ngFor="let stars of specificMovie?.movieStars;  let i=index">{{stars}}</li>
-      </ul>
+
+    <div class="col-md-8">
 
       <div class="row">
-        <div class="col-lg-12">
-          <img class="img-thumbnail starImages" *ngFor="let starImages of specificMovie?.movieStarsImages;" src="{{starImages}}" alt="">
+        <div class="col-md-12">
+          <h1 class="title">{{specificMovie?.movieTitle}} ({{specificMovie?.movieReleaseDate}})</h1>
+          <h2 class="description">{{specificMovie?.movieDescription}}</h2>
+          <h4><strong>Director:</strong> {{specificMovie?.movieDirector}}</h4>
+          <h4><strong>Writer(-s):</strong></h4>
+          <ul>
+            <li *ngFor="let writers of specificMovie?.movieWriters; let i=index">{{writers}}</li>
+          </ul>
+          <h4><strong>Stars:</strong></h4>
+          <ul>
+            <li *ngFor="let stars of specificMovie?.movieStars;  let i=index">{{stars}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row starImages">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let starImages of specificMovie?.movieStarsImages;">
+              <img class="img-responsive img-thumbnail" src="{{starImages}}" alt="">
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-md-12">
           <!-- <img class="moviePhotos" *ngFor="let photos of specificMovie?.moviePhotos;" src="{{photos}}" alt=""> -->
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -63,12 +72,15 @@
         </div>
       </div>
 
-      <div>
-        <input class="btn btn-primary" type="submit" value="Watch Trailer" (click)="updateVideoUrl(specificMovie?.movieTrailer)">
-        <div *ngIf="isCliked">
-          <iframe width="750" height="500" [src]="videoUrl"></iframe>
+      <div class="row">
+        <div class="col-md-12">
+          <input class="btn btn-primary" type="submit" value="Watch Trailer" (click)="updateVideoUrl(specificMovie?.movieTrailer)">
+          <div *ngIf="isCliked">
+            <iframe width="750" height="500" [src]="videoUrl"></iframe>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>

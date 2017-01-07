@@ -1,0 +1,5 @@
+<div *ngFor="let movie of movieList" class="col-md-3" style="padding-bottom: 15px;">
+  <a href="#" [routerLink]="['/movie', movie.$key]">
+    <img class="img-responsive img-rounded" src="{{movie.mainMoviePicture}}" alt="" style="">
+  </a>
+</div>
