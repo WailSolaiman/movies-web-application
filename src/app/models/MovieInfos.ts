@@ -2,12 +2,12 @@ export class MovieInfos {
 
   constructor(
     public $key: string,
-    public movieID: number,
     public mainMoviePicture: string,
     public movieTitle: string,
     public movieDescription: string,
     public movieReleaseDate: number,
     public isMovieHD: boolean,
+    public movieGenre: string,
     public movieDirector: string,
     public movieWriters: string[],
     public movieStars: string[],
@@ -20,14 +20,14 @@ export class MovieInfos {
     return array.map(MovieInfos.fromJson);
   }
 
-  static fromJson({$key, movieID, mainMoviePicture,
+  static fromJson({$key, mainMoviePicture,
     movieTitle, movieDescription, movieReleaseDate, isMovieHD,
-    movieDirector, movieWriters, movieStars, movieStarsImages,
+    movieGenre, movieDirector, movieWriters, movieStars, movieStarsImages,
     movieTrailer, moviePhotos}): MovieInfos {
 
-    return new MovieInfos($key, movieID, mainMoviePicture,
+    return new MovieInfos($key, mainMoviePicture,
       movieTitle, movieDescription, movieReleaseDate, isMovieHD,
-      movieDirector, movieWriters, movieStars, movieStarsImages,
+      movieGenre, movieDirector, movieWriters, movieStars, movieStarsImages,
       movieTrailer, moviePhotos);
   }
 }

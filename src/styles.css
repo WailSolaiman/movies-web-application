@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-image: url("assets/images/bg2.png");
+  background-image: url("assets/images/bg3.png");
   background-repeat: repeat;
   padding-bottom: 35px;
+  font-family: 'Playfair Display', serif;
 }

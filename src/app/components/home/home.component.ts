@@ -24,4 +24,8 @@ export class HomeComponent implements OnInit {
   search(search: string) {
     this.filtered = this.movieList.filter(movie => movie.movieTitle.includes(search));
   }
+
+  loadMoviesGenre(movieGenre: string) {
+    this.filtered = this.movieList.filter(movie => movie.movieGenre === movieGenre);
+  }
 }

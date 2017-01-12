@@ -60,6 +60,10 @@ export class MovieComponent implements OnInit, OnDestroy {
     return value = !value;
   }
 
+  goHomePage() {
+    this.router.navigateByUrl('');
+  }
+
   ngOnDestroy() {
     this.paramsSub.unsubscribe();
   }

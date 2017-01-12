@@ -4,16 +4,17 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Movie's Name</th>
+            <th>Movie's Title</th>
             <th>Director</th>
-            <th>Year</th>
+            <th>Release Year</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let movie of allMovies">
           <tr>
-            <td>Fury</td>
-            <td>Lorem Ipsum</td>
-            <td>2014</td>
+            <td>{{movie.movieTitle}}</td>
+            <td>{{movie.movieDirector}}</td>
+            <td>{{movie.movieReleaseDate}}</td>
+            <td><i class="fa fa-times" aria-hidden="true" (click)="deleteSelectedMovie(movie)"></i></td>
           </tr>
         </tbody>
       </table>

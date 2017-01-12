@@ -35,7 +35,9 @@ import { DeleteMovieComponent } from './components/admin/movies-management/delet
 import { NewUserComponent } from './components/admin/users-management/new-user/new-user.component';
 import { UpdateUserComponent } from './components/admin/users-management/update-user/update-user.component';
 import { RemoveUserComponent } from './components/admin/users-management/remove-user/remove-user.component';
-
+import { SocialComponent } from './components/home/social/social.component';
+import { SecondNavigationComponent } from './components/home/second-navigation/second-navigation.component';
+import { CarouselComponent } from './components/home/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,10 @@ import { RemoveUserComponent } from './components/admin/users-management/remove-
     DeleteMovieComponent,
     NewUserComponent,
     UpdateUserComponent,
-    RemoveUserComponent
+    RemoveUserComponent,
+    SocialComponent,
+    SecondNavigationComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,9 @@
+
 nav {
   border-radius: 0;
-  background-color: rgb(3, 20, 66);
-    border-color: #000000;
+  background-color: #222222;
+  border-color: #000000;
+  margin-bottom: 0;
 }
 
 .navbar-header {
@@ -12,27 +14,32 @@ nav {
 }
 
 .collapse {
-  ul {
+  .left {
     li {
       a  {
         color: white;
-        font-size: large;
+        font-size: 1em;
+        font-family: 'Playfair Display', serif;
+        border-bottom: 1px solid transparent;
+        transition:.5s;
         &:hover {
-          color: rgb(3, 20, 66);
-          background-color: #ffffff;
+          color: #a0ce4e;
+          border-bottom: 1px solid #a0ce4e;
         }
-        // &:select {
-        //   background-color: rgb(3, 20, 66);
-        // }
       }
-      ul {
-        li {
-          &:hover {
-            background-color: rgb(3, 20, 66);
-          }
-          a {
-            color: rgb(3, 20, 66);
-          }
+    }
+  }
+  .navbar-right {
+    li {
+      a {
+        color: white;
+        font-size: 1em;
+        font-family: 'Playfair Display', serif;
+        border-bottom: 1px solid transparent;
+        transition:.5s;
+        &:hover {
+          color: #a0ce4e;
+          border-bottom: 1px solid #a0ce4e;
         }
       }
     }
@@ -40,6 +47,5 @@ nav {
 }
 
 .active {
-  color: rgb(3, 20, 66) !important;
-  background-color: white !important;
+  color: #a0ce4e !important;
 }

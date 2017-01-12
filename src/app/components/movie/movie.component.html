@@ -74,6 +74,7 @@
 
       <div class="row">
         <div class="col-md-12">
+          <input class="btn btn-primary" type="submit" value="Go Back" (click)="goHomePage()">
           <input class="btn btn-primary" type="submit" value="Watch Trailer" (click)="updateVideoUrl(specificMovie?.movieTrailer)">
           <div *ngIf="isCliked">
             <iframe width="750" height="500" [src]="videoUrl"></iframe>

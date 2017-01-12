@@ -9,13 +9,15 @@
           type="button"
           (click)="defineMoviesMngOutlet()"
           [class.active]="MoviesMngOutletActive"
-          class="list-group-item">Manage Movies
+          class="list-group-item">
+          <span class="glyphicon glyphicon-facetime-video" aria-hidden="true" [class.activeSpan]="MoviesMngOutletActive"></span> Manage Movies
         </button>
         <button
           type="button"
           (click)="defineUsersMngOutlet()"
           [class.active]="UsersMngOutletActive"
-          class="list-group-item">Manage Users
+          class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true" [class.activeSpan]="UsersMngOutletActive"></span> Manage Users
         </button>
       </div>
     </div>

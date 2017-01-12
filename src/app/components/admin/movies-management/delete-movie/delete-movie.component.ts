@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MovieInfos } from '../../../../models/MovieInfos';
 
 @Component({
   selector: 'delete-movie',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteMovieComponent implements OnInit {
 
+  @Input('movies') allMovies: MovieInfos [];
+  @Output() deletedMovie = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  deleteSelectedMovie(movie: MovieInfos) {
+    this.deletedMovie.emit(movie);
   }
 
 }

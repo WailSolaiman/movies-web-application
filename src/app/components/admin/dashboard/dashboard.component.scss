@@ -10,5 +10,18 @@ button {
   margin-bottom: 2px;
 }
 .active {
-  background-color: rgb(3, 20, 66) !important;
+  background-color: #a0ce4e !important;
+}
+
+.activeSpan {
+  color: white;
+}
+
+ h1, small {
+  font-family: 'Playfair Display', serif;
+  color: #a0ce4e;
+}
+
+span {
+  color: #a0ce4e;
 }

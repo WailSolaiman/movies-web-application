@@ -1,6 +1,5 @@
 <!-- UPDATE  -->
   <form class="form-inline" style="margin-bottom: 20px;">
-    <button type="button" class="btn btn-default" style="margin-right: 20px;">Load All Movies</button>
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">Search</span>
       <input type="text" class="form-control" placeholder="Search specific movie's title" aria-describedby="basic-addon1">
@@ -11,16 +10,17 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Movie's Name</th>
+            <th>Movie's Title</th>
             <th>Director</th>
-            <th>Year</th>
+            <th>Release Year</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let movie of allMovies">
           <tr>
-            <td>Fury</td>
-            <td>Lorem Ipsum</td>
-            <td>2014</td>
+            <td>{{movie.movieTitle}}</td>
+            <td>{{movie.movieDirector}}</td>
+            <td>{{movie.movieReleaseDate}}</td>
+            <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
           </tr>
         </tbody>
       </table>

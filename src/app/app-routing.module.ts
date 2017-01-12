@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { MoviesComponent } from './components/movies/movies.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { MoviesManagementComponent } from './components/admin/movies-management/movies-management.component';
 import { UsersManagementComponent } from './components/admin/users-management/users-management.component';
@@ -26,7 +27,16 @@ const fallbackRoute: Route = {
 const appRoutes: Routes = [
   indexRoute,
   { path: 'home', component: HomeComponent },
-  // { path: 'movie-details/:movieID', component: MovieDetailsComponent }
+
+  { path: 'movies',
+   children: [
+     {
+       path: '',
+       component: MoviesComponent
+     }
+   ]
+  },
+
   {
     path: 'movie',
     children:

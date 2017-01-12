@@ -3,6 +3,8 @@
     width: 50%;
     margin: auto;
     margin-top: 5%;
+    margin-bottom: 20px;
+
   }
   form {
     @extend .page-header;
@@ -28,4 +30,9 @@
   width: 50%;
   margin: 10% auto;
   text-align: center;
+}
+
+label, h1, small {
+  font-family: 'Playfair Display', serif;
+  color: white;
 }

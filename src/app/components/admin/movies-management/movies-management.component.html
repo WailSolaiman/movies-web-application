@@ -17,10 +17,10 @@
           <new-movie></new-movie>
         </div>
         <div role="tabpanel" class="tab-pane" id="update">
-          <update-movie></update-movie>
+          <update-movie [movies]="allMovies"></update-movie>
         </div>
         <div role="tabpanel" class="tab-pane" id="delete">
-          <delete-movie></delete-movie>
+          <delete-movie [movies]="allMovies" (deletedMovie)="deleteMovieFormDB($event)"></delete-movie>
         </div>
       </div>
     </div>

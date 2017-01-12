@@ -1,0 +1,41 @@
+.logo {
+  img {
+    height: 60px    
+  }
+}
+
+.social {
+  list-style-type: none;
+  float: right;
+  border: 1px solid #a0ce4e;
+  padding: 0;
+  li {
+    display: table-cell;
+    padding: 20px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    a {
+      i {
+        color: white;
+        font-size: large;
+      }
+    }
+  }
+}
+
+.facebook {
+  background-color: #3c5899;
+}
+
+.youtube {
+  background-color: #e6291b;
+}
+
+.google {
+  background-color: #ea4335;
+}
+
+.twitter {
+  background-color: #2caae1;
+}

@@ -14,12 +14,12 @@ dbData.movies.forEach(movie => {
   console.log('adding movie: ', movie.movieTitle);
 
   const movieRef = moviesRef.push({
-    movieID: movie.movieID,
     mainMoviePicture: movie.mainMoviePicture,
     movieTitle: movie.movieTitle,
     movieDescription: movie.movieDescription,
     movieReleaseDate: movie.movieReleaseDate,
     isMovieHD: movie.isMovieHD,
+    movieGenre: movie.movieGenre,
     movieDirector: movie.movieDirector,
     movieWriters: movie.movieWriters,
     movieStars: movie.movieStars,
