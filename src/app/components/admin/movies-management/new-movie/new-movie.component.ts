@@ -16,8 +16,8 @@ export class NewMovieComponent implements OnInit {
   private starImagesArray: string [] = [];
   private starImagesHelper: string [] = [];
   private movieImagesArray: string [] = [];
-  private isMovieHD: boolean = true;
-
+  private isMovieHD: boolean = false;
+  private selectedGerne: string;
   private onlyNumbers = "[0-9]+";
 
 
@@ -65,33 +65,25 @@ export class NewMovieComponent implements OnInit {
     this.movieImagesArray.push(MoviePhoto);
   }
 
-  onSubmit(form) {
-    let movieTitle: string = form.value.title;
-    let movieDirector: string = form.value.director;
-    let movieWriters: string [] = this.writersArray;
-    let mainMoviePicture: string = form.value.poster;
-    let movieDescription: string = form.value.description;
-    let movieStars: string [] = this.starsArray;
-    let movieStarsImages: string [] = this.starImagesArray;
-    let moviePhotos: string [] = this.movieImagesArray;
-    let movieTrailer: string = form.value.trailer;
-    let movieReleaseDate: number = Number(form.value.year);
-    let isMovieHD: boolean = this.isMovieHD;
-    let movieGenre: string = "Thriller";
+  defineGenre(genre: string) {
+    this.selectedGerne = genre;
+    console.log(this.selectedGerne);
+  }
 
+  onSubmit(form) {
     let newMovie = <MovieInfos> {
-      mainMoviePicture: mainMoviePicture,
-      movieTitle: movieTitle,
-      movieDescription: movieDescription,
-      movieReleaseDate: movieReleaseDate,
-      isMovieHD: isMovieHD,
-      movieGenre: movieGenre,
-      movieDirector: movieDirector,
-      movieWriters: movieWriters,
-      movieStars: movieStars,
-      movieStarsImages: movieStarsImages,
-      movieTrailer: movieTrailer,
-      moviePhotos: moviePhotos
+      mainMoviePicture: form.value.poster,
+      movieTitle: form.value.title,
+      movieDescription: form.value.description,
+      movieReleaseDate: Number(form.value.year),
+      isMovieHD: this.isMovieHD,
+      movieGenre: this.selectedGerne,
+      movieDirector: form.value.director,
+      movieWriters: this.writersArray,
+      movieStars: this.starsArray,
+      movieStarsImages: this.starImagesArray,
+      movieTrailer: form.value.trailer,
+      moviePhotos: this.movieImagesArray
     }
 
     this.moviesService.addNewMovie(newMovie);

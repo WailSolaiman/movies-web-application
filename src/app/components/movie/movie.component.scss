@@ -1,62 +1,189 @@
-.container {
-      margin-bottom: 20px;
-}
+@import "src/assets/sass/main.scss";
+$icons-list-style-type: none;
+$icon-display: inline-block;
+$icon-margin-right: 3%;
+$icon-border: 2px solid $color-secondary;
+$icon-padding-top: 1%;
+$icon-padding-bottom: .5%;
+$icon-border-radius: .5%;
+$icon-width: 7%;
+$icon-text-align: center;
+$icon-background: rgba(0, 0, 0, 0.1);
 
-.col-md-4 {
-  padding: 0;
-  img {
+.first-section {
+  background-color: $color-primary;
+  position: relative;
+  overflow: hidden;
+
+  .image-absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    margin-top: 20px;
+    opacity: 0.1;
   }
-  .warningInfo {
-    margin-top: 2%;
-  }
-}
 
-.col-md-8 {
-  .title {
-    background-color: #a0ce4e;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  .description {
-    margin-bottom: 60px;
-  }
-  ul {
-    li {
-      font-size: large;
-    }
-  }
-  .starImages {
-    margin-bottom: 20px;
-    img {
-      width: 200px;
-      height: 230px;
-    }
-    .col-md-12 {
-      .carousel {
-        .carousel-inner {
-          width: 750px;
-          height: 400px;
-          .item {
-            img {
-              height: 420px;
-              width: 100%;
+  .container {
+    padding-top: 3%;
+    padding-bottom: 2%;
+
+    .mainMovieSection {
+      .moviePoster {
+        img {}
+      }
+
+      .movieInformations {
+        .details {
+          .title {
+            color: $color-secondary;
+            margin: 0 0 3%;
+          }
+
+          .ratingsIcons {
+            ul {
+              list-style-type: $icons-list-style-type;
+              padding: 0;
+              margin-bottom: 2%;
+
+              li {
+                display: $icon-display;
+                margin-right: $icon-margin-right;
+                border: $icon-border;
+                padding-top: $icon-padding-top;
+                padding-bottom: $icon-padding-bottom;
+                border-radius: $icon-border-radius;
+                width: $icon-width;
+                text-align: $icon-text-align;
+                background: $icon-background;
+              }
+            }
+          }
+
+          .description {
+            color: $color-secondary;
+          }
+
+          .crew {
+            h3,
+            h4,
+            p {
+              color: $color-secondary;
+            }
+
+            p {
+              margin-bottom: 0;
+            }
+
+            h4 {
+              margin-top: 0;
+            }
+          }
+
+          .cast {
+            h3,
+            p {
+              color: $color-secondary;
             }
           }
         }
       }
     }
+
+    .starImages {
+
+      .starphoto {
+        padding-top: 2%;
+
+        img {
+          width: 170px;
+          height: 250px;
+        }
+      }
+    }
   }
 }
-.btn-primary {
-  margin-top: 10px;
-  margin-bottom: 5px;
+
+.second-section {
+  background-color: $color-secondary;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  h3,
+  h4,
+  p {
+    color: $color-text !important;
+  }
 }
 
-h1, h2, h4, li {
-  color: white;
+.third-section {
+  background-color: $color-primary;
+  padding-top: 3%;
+  padding-bottom: 3%;
+
+  .container {
+    p {
+      color: $color-secondary;
+    }
+    // .parallax {
+    //   //min-height: 500px;
+    //   /* Create the parallax scrolling effect */
+    //   background-attachment: fixed;
+    //   background-position: center;
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    // }
+  }
+}
+
+.fourth-section {
+  background-color: $color-secondary;
+  padding-top: 3%;
+  padding-bottom: 3%;
+
+  .container {
+    ul {
+      padding-bottom: 1%;
+      li {
+        a {
+          border: none;
+          font-weight: $bold;
+          color: $color-text;
+        }
+      }
+      li.active {
+        border-bottom: 1px solid $color-primary;
+        a {
+          color: $color-primary;
+        }
+      }
+    }
+    .content {
+      height: 300px;
+      //width: auto;
+      overflow: hidden;
+      overflow-x: scroll;
+      white-space: nowrap;
+      //box-sizing: border-box;
+      //font-size: 0;
+      //background-color: gray;
+      .original-content {
+        display: inline-block;
+        padding: 0;
+        img {
+          height: 300px;
+        }
+      }
+    }
+  }
+}
+
+.fifth-section {
+  background-color: $color-primary;
+  a {
+    img {
+      width: 100%;
+      height: 395px;
+      margin-bottom: 5%;
+    }
+  }
 }

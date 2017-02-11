@@ -1,27 +1,32 @@
+$color-primary: #a0ce4e;
+$color-secondary: #ffffff;
+$db-border-bottom: 1px solid #000000;
+$db-button-margin-bottom: 2px;
+$db-active-background-color: $color-primary;
+
 .container {
   .page-header {
     h1 {
-      border-bottom: 1px solid black;
+      border-bottom: $db-border-bottom;
     }
   }
 }
 
 button {
-  margin-bottom: 2px;
+  margin-bottom: $db-button-margin-bottom;
 }
 .active {
-  background-color: #a0ce4e !important;
+  background-color: $db-active-background-color !important;
 }
 
 .activeSpan {
-  color: white;
+  color: $color-secondary;
 }
 
  h1, small {
-  font-family: 'Playfair Display', serif;
-  color: #a0ce4e;
+  color: $color-primary;
 }
 
 span {
-  color: #a0ce4e;
+  color: $color-primary;
 }

@@ -1,22 +1,33 @@
-.second-nav {
-  background-color: #2b2b2b;
+$secondary-nav-background-color: #2b2b2b;
+$secondary-nav-margin-bottom: 10px;
+$secondary-nav-link-color: #ffffff;
+$secondary-nav-link-background-color: transparent;
+$secondary-nav-link-padding: 20px;
+$secondary-nav-link-border-bottom: 1px solid transparent;
+$secondary-nav-link-hover-color: #a0ce4e;
+$secondary-nav-link-hover-background-color: 1px solid #a0ce4e;
+$secondary-nav-link-hover-cursor: pointer;
+$secondary-nav-link-active-color: #a0ce4e;
+$secondary-nav-link-active-border-bottom: 1px solid #a0ce4e;
 
-  margin-bottom: 10px;
+.second-nav {
+  background-color: $secondary-nav-background-color;
+
+  margin-bottom: $secondary-nav-margin-bottom;
   .nav-tabs {
     border-bottom: 0;
     li {
       a {
-        color: white;
-        background-color: transparent;
+        color: $secondary-nav-link-color;
+        background-color: $secondary-nav-link-background-color;
         border: 0;
-        font-family: 'Playfair Display', serif;
-        padding: 20px;
-        border-bottom: 1px solid transparent;
+        padding: $secondary-nav-link-padding;
+        border-bottom: $secondary-nav-link-border-bottom;
         transition:.5s;
         &:hover {
-          color: #a0ce4e;
-          border-bottom: 1px solid #a0ce4e;
-          cursor: pointer;
+          color: $secondary-nav-link-hover-color;
+          border-bottom: $secondary-nav-link-hover-background-color;
+          cursor: $secondary-nav-link-hover-cursor;
         }
       }
     }
@@ -24,6 +35,6 @@
 }
 
 .active {
-  color: #a0ce4e !important;
-  border-bottom: 1px solid #a0ce4e !important;
+  color: $secondary-nav-link-active-color !important;
+  border-bottom: $secondary-nav-link-active-border-bottom !important;
 }

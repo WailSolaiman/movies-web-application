@@ -1,7 +1,10 @@
+$color-primary: #a0ce4e;
+$color-secondary: #ffffff;
+
 .panel-heading {
-  background-color: #a0ce4e;
+  background-color: $color-primary;
 }
 
 .panel-title {
-  color: white;
+  color: $color-secondary;
 }

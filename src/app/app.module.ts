@@ -38,6 +38,7 @@ import { RemoveUserComponent } from './components/admin/users-management/remove-
 import { SocialComponent } from './components/home/social/social.component';
 import { SecondNavigationComponent } from './components/home/second-navigation/second-navigation.component';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
+import { HeaderImagesComponent } from './components/home/header-images/header-images.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { CarouselComponent } from './components/home/carousel/carousel.component
     RemoveUserComponent,
     SocialComponent,
     SecondNavigationComponent,
-    CarouselComponent
+    CarouselComponent,
+    HeaderImagesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,12 @@
-$bg_color: #222222;
+$footer-background-color: #222222;
+$footer-text-color: #ffffff;
 
 .footer {
-  background-color: $bg_color;
+  background-color: $footer-background-color;
   .row {
     .col-md-12 {
       p {
-        color: white;
+        color: $footer-text-color;
       }
     }
   }

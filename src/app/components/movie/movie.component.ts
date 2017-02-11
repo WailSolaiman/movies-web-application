@@ -17,7 +17,9 @@ import {Http, Response} from '@angular/http'
 export class MovieComponent implements OnInit, OnDestroy {
 
   private specificMovie: MovieInfos;
-  private paramsSub: Subscription;
+  private filteredGenre: MovieInfos[];
+  private paramsSub$: Subscription;
+  private movies$: Subscription;
   private videoUrl: SafeResourceUrl;
   private isCliked: boolean = false;
   private isLogedin: boolean = false;
@@ -27,25 +29,37 @@ export class MovieComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private moviesService: MoviesService,
-    private sanitizer: DomSanitizer) {};
+    private sanitizer: DomSanitizer) { };
 
 
   ngOnInit() {
-    this.paramsSub = this.route.params.subscribe(params => {
+    this.paramsSub$ = this.route.params.subscribe(params => {
       let key = params['$key'];
       console.log("KEY : " + key);
       this.moviesService.getSpecificMovie(key)
         .do(console.log)
-        .subscribe(val => this.specificMovie = val);
+        .subscribe(val => {
+          this.specificMovie = val;
+          document.body.scrollTop = 0;
+        });
     });
+    let movies$: Subscription = this.moviesService.getAllMovies()
+      .map(allMovies => allMovies.filter(
+        movie =>
+          (movie.movieGenre === this.specificMovie.movieGenre) &&
+          (movie.movieTitle !== this.specificMovie.movieTitle)))
+      .subscribe(all => {
+          this.filteredGenre = all;
+          document.body.scrollTop = 0;
+      });
   }
 
   private updateVideoUrl(url: string) {
-      let dangerousVideoUrl = url;
-      this.isCliked = this.toggle(this.isCliked);
-      this.videoUrl =
-          this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
-    }
+    let dangerousVideoUrl = url;
+    this.isCliked = this.toggle(this.isCliked);
+    this.videoUrl =
+      this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
+  }
 
   private checkFirstDivElement(i: number): boolean {
     if (i === 0) {
@@ -65,7 +79,8 @@ export class MovieComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.paramsSub.unsubscribe();
+    this.paramsSub$.unsubscribe();
+    //this.movies$.unsubscribe();
   }
 
 

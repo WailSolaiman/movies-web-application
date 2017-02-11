@@ -1,11 +1,14 @@
+$color-primary: #a0ce4e;
+$hover-cursor: pointer;
+
 .table {
   tbody {
     tr {
       td {
         i {
-          color: #a0ce4e;
+          color: $color-primary;
           &:hover {
-            cursor: pointer;
+            cursor: $hover-cursor;
           }
         }
       }

@@ -1,24 +1,26 @@
 <div class="container">
   <div class="row">
-    <social></social>
-    <carousel></carousel>
-    <second-navigation
-      [allMovies]="movieList"
+    <!-- <social></social> -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <carousel></carousel>
+      <header-images></header-images>
+    </div>
+    <div class="col-lg-12 hidden-md hidden-sm hidden-xs">
+      <second-navigation [allMovies]="movieList"
       (filteredMovies)="loadMoviesGenre($event)">
-    </second-navigation>
-    <div class="col-md-12">
+      </second-navigation>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="page-header">
         <h1>We Stream Awesome HD Movies Online!
           <small>Enjoy your time with us...</small></h1>
       </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="basic-addon1">Search</span>
-        <input type="text"
-          class="form-control"
-          placeholder="Search your movie here ..."
-          (keyup)="search(input.value)" #input>
+        <input type="text" class="form-control"
+        placeholder="Search your movie here ..." (keyup)="search(input.value)" #input>
       </div>
     </div>
     <movies [movieList]="filtered"></movies>

@@ -1,13 +1,13 @@
+@import "src/assets/sass/main.scss";
+
+$img-width: 360px;
+$img-height: 530px;
+
 .container {
-  .header {
-    h1 {
-      color: white;
-    }
-  }
   .latest {
     img {
-      width: 360px;
-      height: 530px;
+      width: $img-width;
+      height: $img-height;
     }
   }
 }
