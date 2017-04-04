@@ -1,4 +1,10 @@
-<!-- DELETE  -->
+<!-- UPDATE  -->
+  <form class="form-inline" style="margin-bottom: 20px;">
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">Search</span>
+      <input type="text" class="form-control" placeholder="Search specific movie's title" aria-describedby="basic-addon1">
+    </div>
+  </form>
   <div class="row">
     <div class="col-md-12">
       <table class="table table-striped">
@@ -14,17 +20,9 @@
             <td>{{movie.movieTitle}}</td>
             <td>{{movie.movieDirector}}</td>
             <td>{{movie.movieReleaseDate}}</td>
-            <td>
-                <i 
-                  class="fa fa-times" 
-                  aria-hidden="true" >
-                </i>
-              </td>
+            <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-
-
-  <!--(click)="deleteSelectedMovie(movie)"-->

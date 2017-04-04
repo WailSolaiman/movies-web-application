@@ -1,0 +1,29 @@
+@import "src/assets/sass/main.scss";
+
+
+$primary-color: #a0ce4e;
+$input-group-addon-background-color: $primary-color;
+$input-group-addon-color: #222222;
+
+.row {
+  // .col-md-12 {
+  //   margin-top: 2%;
+  //   margin-bottom: 2%;
+  // }
+  .col-lg-12:first-child {
+    border-top: 2px solid #a0ce4e;
+    margin-top: 2%;
+  }
+  .col-lg-12 {
+    padding: 0;
+  }
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group-addon {
+  background-color: $input-group-addon-background-color;
+  color: $input-group-addon-color;
+}

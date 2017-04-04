@@ -1,0 +1,91 @@
+<!-- Reactive FormsModule  -->
+<div *ngIf = "!isRegisterd" class="container">
+  <div class="page-header">
+    <h1>Register <small>New User Registration </small></h1>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="form-group">
+      <label for="firstname">Firstname</label>
+      <input
+            formControlName="firstname"
+            type="text"
+            class="form-control"
+            id="firstname"
+            placeholder="Enter your firstname">
+      <div *ngIf="form.controls.firstname.touched && form.controls.firstname.errors">
+        <div
+              *ngIf="form.controls.firstname.errors.required"
+              class="alert alert-danger">
+              Firstname is required.
+        </div>
+        <div
+              *ngIf="form.controls.firstname.errors.minlength"
+              class="alert alert-danger">
+              Firstname should be minimum {{form.controls.firstname.errors.minlength.requiredLength}} characters.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Lasttname</label>
+      <input
+            formControlName="lastname"
+            type="text"
+            class="form-control"
+            id="lastname"
+            placeholder="Enter your lastname">
+      <div *ngIf="form.controls.lastname.touched && form.controls.lastname.errors">
+        <div
+              *ngIf="form.controls.lastname.errors.required"
+              class="alert alert-danger">
+              Lastname is required.
+        </div>
+        <div
+              *ngIf="form.controls.lastname.errors.minlength"
+              class="alert alert-danger">
+              Lastname should be minimum {{form.controls.lastname.errors.minlength.requiredLength}} characters.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="emailaddress">Email address</label>
+      <input
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="emailaddress"
+            aria-describedby="emailHelp"
+            placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <div
+            *ngIf="form.controls.email.touched && !form.controls.email.valid"
+            class="alert alert-danger">
+            E-Mail Format is not valid.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="passwordOne">Password</label>
+      <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="passwordOne"
+            placeholder="Password">
+      <div
+            *ngIf="form.controls.password.touched && !form.controls.password.valid"
+            class="alert alert-danger">
+            Password should be minimum {{form.controls.password.errors.minlength.requiredLength}} characters.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="isRegisterd" class="container">
+  <div class="alert alert-success" role="alert">
+    <p>You have now successfully registered... Enjoy your time with us.</p>
+    <small>Please <a routerLink="/login" routerLinkActive="active" class="alert-link">Login</a> to watch best MOVIE4ALL movies with HD quality.</small>
+  </div>
+</div>

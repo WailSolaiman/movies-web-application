@@ -1,0 +1,33 @@
+$img-width: 100%;
+$img-height: 350px;
+$color-primary: #a0ce4e;
+$color-secondary: #ffffff;
+
+div {
+  display: inline-flex;
+  img {
+    width: $img-width;
+    height: $img-height;
+  }
+  div {
+    width: 50%;
+    display: block;
+    h3 {
+      color: $color-primary;
+    }
+    p {
+      color: $color-secondary;
+      i {
+        color: $color-primary;
+        a {
+          color: $color-secondary;
+          text-decoration: none;
+          transition:.5s;
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+}

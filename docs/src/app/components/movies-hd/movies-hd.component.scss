@@ -1,0 +1,13 @@
+@import "src/assets/sass/main.scss";
+
+$img-width: 360px;
+$img-height: 530px;
+
+.container {
+  .hd {
+    img {
+      width: $img-width;
+      height: $img-height;
+    }
+  }
+}

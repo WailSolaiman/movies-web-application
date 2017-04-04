@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="page-header">
+      <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Dashboard <small>Manage the Movie4All Webapp...</small></h1>
+    </div>
+    <div class="col-md-4">
+      <div class="list-group">
+        <button
+          type="button"
+          (click)="defineMoviesMngOutlet()"
+          [class.active]="MoviesMngOutletActive"
+          class="list-group-item">
+          <span class="glyphicon glyphicon-facetime-video" aria-hidden="true" [class.activeSpan]="MoviesMngOutletActive"></span> Manage Movies
+        </button>
+        <button
+          type="button"
+          (click)="defineUsersMngOutlet()"
+          [class.active]="UsersMngOutletActive"
+          class="list-group-item">
+          <span class="glyphicon glyphicon-user" aria-hidden="true" [class.activeSpan]="UsersMngOutletActive"></span> Manage Users
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <router-outlet name="movies-management-outlet"></router-outlet>
+      <router-outlet name="users-management-outlet"></router-outlet>
+    </div>
+
+  </div>
+</div>
