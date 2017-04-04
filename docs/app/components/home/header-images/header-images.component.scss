@@ -1,0 +1,13 @@
+$header-img-width: 100%;
+$header-img-height: 195px;
+
+.col-md-6, .col-md-12, .col-sm-12, .col-sm-6 {
+  padding: 0;
+}
+
+.col-md-6 {
+  img {
+    width: $header-img-width;
+    height: $header-img-height;
+  }
+}

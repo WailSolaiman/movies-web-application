@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 header">
+      <h1 class="page-header">Latest relased movies</h1>
+    </div>
+    <div class="col-md-12 latest">
+      <div *ngFor="let movie of latestMovies">
+        <div *ngIf="movie?.movieReleaseDate > 2014" class="col-md-4" style="padding-bottom: 15px;">
+          <a href="#" [routerLink]="['/movie', movie.$key]">
+            <img class="img-responsive" src="{{movie?.mainMoviePicture}}" alt="" style="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

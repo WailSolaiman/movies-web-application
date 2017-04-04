@@ -1,0 +1,15 @@
+@import "src/assets/sass/main.scss";
+
+$page-header-width: 50%;
+$page-header-margin: auto;
+$page-header-margin-top: 5%;
+$page-header-margin-bottom: 5%;
+
+.container {
+  .page-header {
+    width: $page-header-width;
+    margin: $page-header-margin;
+    margin-top: $page-header-margin-top;
+    margin-bottom: $page-header-margin-bottom;
+  }
+}

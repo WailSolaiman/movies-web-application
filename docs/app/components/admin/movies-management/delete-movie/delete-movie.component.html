@@ -1,0 +1,30 @@
+<!-- DELETE  -->
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Movie's Title</th>
+            <th>Director</th>
+            <th>Release Year</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let movie of allMovies">
+          <tr>
+            <td>{{movie.movieTitle}}</td>
+            <td>{{movie.movieDirector}}</td>
+            <td>{{movie.movieReleaseDate}}</td>
+            <td>
+                <i 
+                  class="fa fa-times" 
+                  aria-hidden="true" >
+                </i>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <!--(click)="deleteSelectedMovie(movie)"-->
